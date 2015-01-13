@@ -114,7 +114,7 @@ class TLC_Transient {
 
 	public function spawn_server() {
 		$server_url = home_url( '/?tlc_transients_request' );
-		wp_remote_post( $server_url, array( 'body' => array( '_tlc_update' => $this->lock, 'key' => $this->raw_key ), 'timeout' => 0.01, 'blocking' => false, 'sslverify' => apply_filters( 'https_local_ssl_verify', true ) ) );
+		wp_remote_post( $server_url, array( 'body' => array( '_tlc_update' => $this->lock, 'key' => $this->raw_key ), 'timeout' => 60, 'blocking' => false, 'sslverify' => apply_filters( 'https_local_ssl_verify', true ) ) );
 	}
 
 	public function updates_with( $callback, $params = array() ) {
